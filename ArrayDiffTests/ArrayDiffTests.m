@@ -28,13 +28,13 @@
         @"comment",
     ];
 
-    NSSet *expectedDiff = [NSSet setWithArray:@[
+    NSSet<VMBArrayDiffChange *> *expectedDiff = [NSSet setWithArray:@[
         [[VMBArrayDiffChange alloc] initWithChangeKind:VMBArrayDiffChangeTypeInsert index:0],
         [[VMBArrayDiffChange alloc] initWithChangeKind:VMBArrayDiffChangeTypeDelete index:4],
         [[VMBArrayDiffChange alloc] initWithChangeKind:VMBArrayDiffChangeTypeInsert index:2],
     ]];
 
-    NSSet *diff = VMBChangesByDiffingArrays(left, right);
+    NSSet<VMBArrayDiffChange *> *diff = VMBChangesByDiffingArrays(left, right);
 
     XCTAssertEqualObjects(diff, expectedDiff);
 }

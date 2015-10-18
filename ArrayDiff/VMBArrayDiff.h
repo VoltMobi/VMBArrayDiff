@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, VMBArrayDiffChangeType) {
 @end
 
 
-extern NSSet *VMBChangesByDiffingArrays(NSArray *left, NSArray *right) __attribute__((overloadable));
-extern NSSet *VMBChangesByDiffingArrays(NSArray *left, NSArray *right, __nullable VMBArrayElementComparator comparator) __attribute__((overloadable));
+extern NSSet<VMBArrayDiffChange *> *VMBChangesByDiffingArrays(NSArray *left, NSArray *right) __attribute__((overloadable));
+extern NSSet<VMBArrayDiffChange *> *VMBChangesByDiffingArrays(NSArray *left, NSArray *right, __nullable VMBArrayElementComparator comparator) __attribute__((overloadable));
 
 NS_ASSUME_NONNULL_END
